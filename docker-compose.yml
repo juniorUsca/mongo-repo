@@ -1,0 +1,17 @@
+version: "3"
+services:
+  mongo-pri:
+    image: "mongo"
+    ports:
+      - "27017:27017"
+    command: mongod --bind_ip_all --replSet “replica1”
+  mongo-sec1:
+    image: "mongo"
+    ports:
+      - "27018:27017"
+    command: mongod --bind_ip_all --replSet “replica1”
+  mongo-sec2:
+    image: "mongo"
+    ports:
+      - "27019:27017"
+    command: mongod --bind_ip_all --replSet “replica1”
